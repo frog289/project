@@ -47,5 +47,4 @@ function mapForEach(arr, fn) {
 const lenArray = mapForEach(strArray, function(item) {
   return item.length <= 3 ? 0 : 1; 
 });
-
 console.log(lenArray);
