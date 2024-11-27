@@ -1,50 +1,79 @@
-const arr = [1, 2, 3];
-const newArr = arr.map(item => item * 10 * 3);
-console.log(newArr); 
+const clientBankSymbol = Symbol('clientBank');
+const clinicWorkerSymbol = Symbol('clinicWorker');
+const citizenRFSymol = Symbol('citizenRF');
+const clientBank = {
+  [clientBankSymbol]: 'Борисов Кирилл',
+  accountNumber: 1234567890,
+  balance: 1000,
+};
+const clinicWorker = {
+  [clinicWorkerSymbol]: 'Дмитрий Смирнов',
+  speciality: 'Дотер',
+  employeeID: 987654321,
+};
+const citizenRF = {
+  [citizenRFSymol]: 'Балин Елисей',
+  passportNumber: '1234 567890',
+  address: 'г. Москва, ул. Ленина, д. 1',
+};
+console.log("Client Bank:", clientBank);
+console.log("Clinic Worker:", clinicWorker);
+console.log("Citizen RF:", citizenRF);
+console.log(clientBank[clientBankSymbol]);
+console.log(clinicWorker[clinicWorkerSymbol]);
+console.log(citizenRF[citizenRFSymol]);
 
 
-const year = [2006,2005,2004];
-const age = year.map(year => new Date().getFullYear() - year);
-console.log(age);
-const children = [
-   {name: 'Dmitry', age:18, isAdmin: true },
-   {name: 'Kirill', age:16, isAdmin: false },
-   {name: 'Niko', age:26, isAdmin: true },
-   {name: 'Axe', age:24, isAdmin: true },
-   {name: 'Roma', age:14, isAdmin: false }
-];
-const fullage = children.filter(children => children.age >=18);
-const admin = fullage.find(children => children.isAdmin);
-if (admin) {
-    console.log(`Администратор сайта: ${admin.name}`);
-  } else {
-    console.log("Администратор не найден.");
-  }
-  
-  console.log(fullage);
-  const students = [
-    { name: 'Elisey', scores: [5, 4, 3] },
-    { name: 'Kirill', scores: [4, 4, 5] },
-    { name: 'Dima', scores: [3, 3, 3] }
-  ];
-  
-  const averageScores = students.map(student => {
-    const totalScore = student.scores.reduce((sum, score) => sum + score, 0);
-    return totalScore / student.scores.length;
-  });
-  
-  console.log(averageScores);
-  const strArray = ['JavaScript', 'Python', 'PHP', 'Java', 'C'];
-
-function mapForEach(arr, fn) {
-  const newArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArray.push(fn(arr[i]));
-  }
-  return newArray;
+const number = +prompt('Загадайте цифру до 9', '');
+switch (number) {
+  case 1:
+    alert('Вы ввели число 1');
+    break;
+  case 2:
+    alert('Вы ввели число 2');
+    break;
+  case 3:
+    alert('Вы ввели число 3');
+    break;
+  case 4:
+    alert('Вы ввели число 4');
+    break;
+  case 5:
+    alert('Вы ввели число 5');
+    break;
+  case 6:
+    alert('Вы ввели число 6');
+    break;
+  case 7:
+    alert('Вы ввели число 7');
+    break;
+  case 8:
+  case 9:
+    alert('Вы ввели число 8, а может и 9');
+    break;
+  default:
+    alert('Вы ввели число вне диапазона 1-9'); 
 }
 
-const lenArray = mapForEach(strArray, function(item) {
-  return item.length <= 3 ? 0 : 1; 
-});
-console.log(lenArray);
+const str = prompt("Введите строку с цифрами:", "");
+const phoneNumber = "YourPhoneNumberHere"; // Replace with your phone number
+
+
+if(str){ // add input validation
+    let firstDigitMessage;
+    switch (str.charAt(0)) {
+        case '1':
+        case '2':
+        case '3':
+            firstDigitMessage = 'Первая цифра 1, 2 или 3';
+            break;
+        default:
+            firstDigitMessage = 'нет';
+    }
+
+    const phoneNumberIncluded = str.includes(phoneNumber);
+    console.log(firstDigitMessage);
+    console.log("Номер телефона включен:", phoneNumberIncluded);
+} else {
+    console.log("Строка пуста")
+}
