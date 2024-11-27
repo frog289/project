@@ -92,10 +92,10 @@ console.log ("задание 4")
     for (let i = 0; i < iterations; i++) {
       const randomValue = Math.floor(Math.random() * 3);
   
-      if (randomValue === 0) { // Красный
+      if (randomValue === 0) {
         currentRed++;
       } else {
-        currentRed = 0; // Сбрасываем счетчик красного, если выпало другое значение
+        currentRed = 0; 
       }
   
       maxRed = Math.max(maxRed, currentRed);
