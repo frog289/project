@@ -18,3 +18,21 @@ var name = prompt("Введите имя");
 var yearRoj = prompt("Введите год рождения");
 var age = currentYear - yearRoj;
 document.write(name + ": " + age);
+
+var Name = prompt("Введите имя:");
+var j = Name.length;
+var result = true;
+var center = 0;
+
+if (Name.length % 2 != 0) {
+       var center = (Name.length / 2);
+       Name = Name.replace(Name.charAt(center),'');
+};
+
+Name = Name.toLowerCase();
+for (let i = 0; i < Name.length / 2; i++) {
+    if (Name.charAt(i) !== Name.charAt(Name.length - 1 - i)) {
+        result = false;
+    }
+}
+alert(result);
